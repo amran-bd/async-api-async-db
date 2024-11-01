@@ -1,0 +1,26 @@
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG
+server:
+  error:
+    include-stacktrace: never
+spring:
+  application:
+    name: async-api-async-db
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  main:
+    allow-bean-definition-overriding: true
+  r2dbc:
+    password: test1373
+    pool:
+      enabled: true
+      initial-size: 5
+      max-idle-time: 30m
+      max-size: 20
+      validation-query: SELECT 1
+    url: r2dbc:mysql://localhost:3306/test
+    username: root
