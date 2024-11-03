@@ -43,19 +43,19 @@ public class ProductController {
 
     @PostMapping("/product")
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Product> createTutorial(@RequestBody Product product) {
+    public Mono<Product> createProduct(@RequestBody Product product) {
         return productService.addProduct(product);
     }
 
     @PutMapping("/product/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Product> updateTutorial(@PathVariable("id") Long id, @RequestBody Product product) {
+    public Mono<Product> updateProduct(@PathVariable("id") Long id, @RequestBody Product product) {
         return productService.updateProduct(product, id);
     }
 
     @DeleteMapping("/product/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteTutorial(@PathVariable("id") Long id) {
+    public Mono<Void> deleteProduct(@PathVariable("id") Long id) {
         return productService.deleteProduct(id);
     }
 }
